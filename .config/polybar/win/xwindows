@@ -1,0 +1,4 @@
+#!/bin/bash
+pkill polybar ;sleep 1;
+feh --bg-fill -Z /root/Pictures/windows.jpg &
+polybar -c /root/.config/polybar/configwindows.ini windows
