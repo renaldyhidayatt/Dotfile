@@ -89,6 +89,11 @@ Plug 'mxw/vim-jsx'
 
 Plug 'pangloss/vim-javascript'
 
+Plug 'ap/vim-css-color'
+Plug 'joshdick/onedark.vim'
+Plug 'itchyny/lightline.vim'
+
+Plug 'wakatime/vim-wakatime'
 
 " Initialize plugin system
 call plug#end()
@@ -101,10 +106,12 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-colorscheme ariake
+colorscheme onedark
 
 
 set encoding=UTF-8
+
+
 
 inoremap jk <ESC>
 nmap <C-b> :NERDTreeToggle<CR>
@@ -131,6 +138,19 @@ let g:NERDTreeGitStatusWithFlags = 1
 
 
 let g:NERDTreeIgnore = ['^node_modules$']
+
+" ligthline
+
+let g:lightline = {
+      \ 'colorscheme': 'onedark',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 
 " vim-prettier
 "let g:prettier#quickfix_enabled = 0
